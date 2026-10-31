@@ -177,7 +177,7 @@ Object.assign(i18n.tr, {
   "gallery.cafe.title": "Hareketli çatılı restoran terası",
   "gallery.cafe.desc": "Gündüz ve akşam konforu için ayarlanabilir çatı lamelleri ve entegre aydınlatmaya sahip modern dış mekân örtüsü.",
   "gallery.terrace.title": "Geniş teras tentesi tasarım görseli",
-  "gallery.terrace.desc": "Kumaş çatı bölümleri ve koyu renkli taşıyıcıya sahip bir terasın 3D tasarım görseli."
+  "gallery.terrace.desc": "Kumaş çatı bölümleri ve koyu renkli taşıyıcıya sahip bir terasın 3D tasarım görseli.",
   "gallery.home.title": "Entegre aydınlatmalı yan tente",
   "gallery.home.desc": "Evin yanındaki dış alan için kumaş çatılı ve gövdeye yerleştirilmiş çizgisel aydınlatmalı kullanışlı çözüm."
 });
