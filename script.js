@@ -219,6 +219,10 @@ function setLanguage(lang) {
   updatePergolaPreview();
 }
 
+Object.assign(i18n.ar, { "designer.glassOpening": "مسافة فتح الزجاج" });
+Object.assign(i18n.en, { "designer.glassOpening": "Glass opening distance" });
+Object.assign(i18n.tr, { "designer.glassOpening": "Cam açılma mesafesi" });
+
 const designerFields = ["pergolaWidth", "pergolaLength", "pergolaHeight"];
 function getDimensionValue(field) {
   const value = Number(field.value);
@@ -288,19 +292,19 @@ function updatePergolaPreview() {
   const glassControls = document.getElementById("glassControls");
   if (glassControls) glassControls.hidden = !sidesOn;
 
-  const frontOpen = sidesOn ? Number(document.getElementById("glassOpenFront")?.value || 0) / 100 : 0;
-  const backOpen = sidesOn ? Number(document.getElementById("glassOpenBack")?.value || 0) / 100 : 0;
-  const leftOpen = sidesOn ? Number(document.getElementById("glassOpenLeft")?.value || 0) / 100 : 0;
-  const rightOpen = sidesOn ? Number(document.getElementById("glassOpenRight")?.value || 0) / 100 : 0;
-
-  const setPct = (id, value) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = `${Math.round(value * 100)}%`;
-  };
-  setPct("glassOpenFrontValue", frontOpen);
-  setPct("glassOpenBackValue", backOpen);
-  setPct("glassOpenLeftValue", leftOpen);
-  setPct("glassOpenRightValue", rightOpen);
+  // Front/back follow the width; left/right follow the length.
+  const glassSpans = [w, w, l, l];
+  const glassOpenings = ["Front", "Back", "Left", "Right"].map((side, index) => {
+    const range = document.getElementById(`glassOpen${side}`);
+    range.max = glassSpans[index];
+    range.disabled = !sidesOn;
+    const distance = Number(range.value);
+    const label = document.getElementById(`glassOpen${side}Value`);
+    label.textContent = `${Number(distance.toFixed(2))} ${unit}`;
+    range.setAttribute("aria-valuetext", label.textContent);
+    return sidesOn ? distance / glassSpans[index] : 0;
+  });
+  const [frontOpen, backOpen, leftOpen, rightOpen] = glassOpenings;
 
   const avgOpen = (frontOpen + backOpen + leftOpen + rightOpen) / 4;
 
@@ -339,13 +343,16 @@ function getDesignWhatsAppUrl() {
   const roof = document.querySelector('input[name="roof"]:checked').value;
   const finish = document.querySelector('input[name="finish"]:checked').value;
   const [width, length, height] = designerFields.map((id) => document.getElementById(id).value);
-  const front = document.getElementById("glassOpenFront")?.value || "0";
-  const back = document.getElementById("glassOpenBack")?.value || "0";
-  const left = document.getElementById("glassOpenLeft")?.value || "0";
-  const right = document.getElementById("glassOpenRight")?.value || "0";
   const roofOpening = roof !== "fixed" ? document.getElementById("roofOpen")?.value || "0" : "0";
-  const glassDetails = document.getElementById("sideOption").checked ? `\n${dict["designer.glassFront"]}: ${front}%\n${dict["designer.glassBack"]}: ${back}%\n${dict["designer.glassLeft"]}: ${left}%\n${dict["designer.glassRight"]}: ${right}%` : "";
-  const message = `${dict["designer.message"]}\n${dict["designer.width"]}: ${width} m\n${dict["designer.length"]}: ${length} m\n${dict["designer.height"]}: ${height} m\n${dict["designer.area"]}: ${Number(width) * Number(length)} m²\n${dict[`designer.roof.${roof}`]}\n${dict["designer.roofOpen"]}: ${roofOpening}%\n${dict[`designer.finish.${finish}`]}\n${document.getElementById("sideOption").checked ? dict["designer.side.yes"] : dict["designer.side.no"]}${glassDetails}`;
+  const glassDetails = document.getElementById("sideOption").checked
+    ? ["Front", "Back", "Left", "Right"].map((side, index) => {
+      const span = index < 2 ? width : length;
+      const opening = document.getElementById(`glassOpen${side}`).value;
+      return `\n${dict[`designer.glass${side}`]}: ${span} m × ${height} m (${dict["designer.glassOpening"]}: ${opening} m)`;
+    }).join("")
+    : "";
+  const area = Number((Number(width) * Number(length)).toFixed(2));
+  const message = `${dict["designer.message"]}\n${dict["designer.width"]}: ${width} m\n${dict["designer.length"]}: ${length} m\n${dict["designer.height"]}: ${height} m\n${dict["designer.area"]}: ${area} m²\n${dict[`designer.roof.${roof}`]}\n${dict["designer.roofOpen"]}: ${roofOpening}%\n${dict[`designer.finish.${finish}`]}\n${document.getElementById("sideOption").checked ? dict["designer.side.yes"] : dict["designer.side.no"]}${glassDetails}`;
   return `https://wa.me/905550181553?text=${encodeURIComponent(message)}`;
 }
 
@@ -373,10 +380,10 @@ document.querySelectorAll("[data-roof-action]").forEach((button) => {
 
 document.querySelectorAll("[data-glass-action]").forEach((btn) => {
   btn.addEventListener("click", () => {
-    const target = btn.getAttribute("data-glass-action") === "open" ? "100" : "0";
+    const open = btn.getAttribute("data-glass-action") === "open";
     ["glassOpenFront", "glassOpenBack", "glassOpenLeft", "glassOpenRight"].forEach((id) => {
       const range = document.getElementById(id);
-      if (range) range.value = target;
+      if (range) range.value = open ? range.max : "0";
     });
     updatePergolaPreview();
   });
