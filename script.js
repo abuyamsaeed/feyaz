@@ -221,7 +221,8 @@ function setLanguage(lang) {
 
 const designerFields = ["pergolaWidth", "pergolaLength", "pergolaHeight"];
 function getDimensionValue(field) {
-  return Math.min(Number(field.max), Math.max(Number(field.min), Number(field.value) || Number(field.defaultValue)));
+  const value = Number(field.value);
+  return Number.isFinite(value) && value > 0 ? value : Number(field.defaultValue);
 }
 
 function updatePergolaPreview() {
@@ -234,10 +235,10 @@ function updatePergolaPreview() {
   const [w, l, h] = values;
   const lang = document.documentElement.lang;
   const unit = lang === "ar" ? "م" : "m";
-  document.getElementById("widthLabel").textContent = `${w.toFixed(1)} m`;
-  document.getElementById("lengthLabel").textContent = `${l.toFixed(1)} m`;
-  document.getElementById("heightLabel").textContent = `${h.toFixed(1)} m`;
-  document.getElementById("dimensionSummary").textContent = `${w.toFixed(1)} ${unit} × ${l.toFixed(1)} ${unit} × ${h.toFixed(1)} ${unit}`;
+  document.getElementById("widthLabel").textContent = `${w} m`;
+  document.getElementById("lengthLabel").textContent = `${l} m`;
+  document.getElementById("heightLabel").textContent = `${h} m`;
+  document.getElementById("dimensionSummary").textContent = `${w} ${unit} × ${l} ${unit} × ${h} ${unit}`;
   document.getElementById("areaSummary").textContent = `${new Intl.NumberFormat(lang, { maximumFractionDigits: 2 }).format(w * l)} ${unit}²`;
   document.querySelector(".pergola-structure").setAttribute("transform", `translate(345 230) scale(${(w / 4).toFixed(3)} ${(l / 4).toFixed(3)}) translate(-345 -230)`);
   const finish = document.querySelector('input[name="finish"]:checked').value;
@@ -332,16 +333,10 @@ function updatePergolaPreview() {
 }
 
 document.querySelectorAll("#designerForm input").forEach((field) => field.addEventListener("input", updatePergolaPreview));
-designerFields.forEach((id) => {
-  const field = document.getElementById(id);
-  field.addEventListener("blur", () => {
-    field.value = getDimensionValue(field);
-    updatePergolaPreview();
-  });
-});
 document.querySelectorAll("#designerForm input[type=radio], #designerForm input[type=checkbox]").forEach((field) => field.addEventListener("change", updatePergolaPreview));
 document.getElementById("designerForm").addEventListener("submit", (event) => {
   event.preventDefault();
+  if (!event.currentTarget.reportValidity()) return;
   const dict = i18n[document.documentElement.lang] || i18n.ar;
   const roof = document.querySelector('input[name="roof"]:checked').value;
   const finish = document.querySelector('input[name="finish"]:checked').value;

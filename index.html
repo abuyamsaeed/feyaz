@@ -108,9 +108,9 @@
           <form class="designer-controls" id="designerForm">
             <div class="designer-step"><span class="step-number">01</span><div><h3 data-i18n="designer.dimensions">أبعاد المظلة</h3><p data-i18n="designer.dimensionsHint">أدخل القياسات بالمتر</p></div></div>
             <div class="measure-grid">
-              <label><span data-i18n="designer.width">العرض</span><div class="measure-input"><input id="pergolaWidth" type="number" min="2" max="12" step="0.1" value="4" inputmode="decimal"><span>m</span></div></label>
-              <label><span data-i18n="designer.length">الطول</span><div class="measure-input"><input id="pergolaLength" type="number" min="2" max="12" step="0.1" value="4" inputmode="decimal"><span>m</span></div></label>
-              <label><span data-i18n="designer.height">الارتفاع</span><div class="measure-input"><input id="pergolaHeight" type="number" min="2" max="4" step="0.1" value="2.6" inputmode="decimal"><span>m</span></div></label>
+              <label><span data-i18n="designer.width">العرض</span><div class="measure-input"><input id="pergolaWidth" type="number" min="0.01" step="any" required value="4" inputmode="decimal"><span>m</span></div></label>
+              <label><span data-i18n="designer.length">الطول</span><div class="measure-input"><input id="pergolaLength" type="number" min="0.01" step="any" required value="4" inputmode="decimal"><span>m</span></div></label>
+              <label><span data-i18n="designer.height">الارتفاع</span><div class="measure-input"><input id="pergolaHeight" type="number" min="0.01" step="any" required value="2.6" inputmode="decimal"><span>m</span></div></label>
             </div>
             <div class="designer-step"><span class="step-number">02</span><div><h3 data-i18n="designer.roof">نوع السقف</h3><p data-i18n="designer.roofHint">اختر التصميم الأقرب لاحتياجك</p></div></div>
             <div class="choice-grid roof-choices"><label class="choice-card selected"><input type="radio" name="roof" value="louver" checked><span class="choice-icon">▥</span><span data-i18n="designer.louver">شرائح متحركة</span></label><label class="choice-card"><input type="radio" name="roof" value="fabric"><span class="choice-icon">⌁</span><span data-i18n="designer.fabric">قماش قابل للطي</span></label><label class="choice-card"><input type="radio" name="roof" value="fixed"><span class="choice-icon">▤</span><span data-i18n="designer.fixed">سقف ثابت</span></label></div>
