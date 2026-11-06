@@ -220,13 +220,17 @@ function setLanguage(lang) {
 }
 
 const designerFields = ["pergolaWidth", "pergolaLength", "pergolaHeight"];
+function getDimensionValue(field) {
+  return Math.min(Number(field.max), Math.max(Number(field.min), Number(field.value) || Number(field.defaultValue)));
+}
+
 function updatePergolaPreview() {
   const width = document.getElementById("pergolaWidth");
   if (!width) return;
   const length = document.getElementById("pergolaLength");
   const height = document.getElementById("pergolaHeight");
-  const values = [width, length, height].map((field) => Math.min(Number(field.max), Math.max(Number(field.min), Number(field.value) || Number(field.defaultValue))));
-  [width, length, height].forEach((field, index) => { field.value = values[index]; });
+  // Keep partial input untouched so mobile users can clear and type decimals.
+  const values = [width, length, height].map(getDimensionValue);
   const [w, l, h] = values;
   const lang = document.documentElement.lang;
   const unit = lang === "ar" ? "م" : "m";
@@ -328,6 +332,13 @@ function updatePergolaPreview() {
 }
 
 document.querySelectorAll("#designerForm input").forEach((field) => field.addEventListener("input", updatePergolaPreview));
+designerFields.forEach((id) => {
+  const field = document.getElementById(id);
+  field.addEventListener("blur", () => {
+    field.value = getDimensionValue(field);
+    updatePergolaPreview();
+  });
+});
 document.querySelectorAll("#designerForm input[type=radio], #designerForm input[type=checkbox]").forEach((field) => field.addEventListener("change", updatePergolaPreview));
 document.getElementById("designerForm").addEventListener("submit", (event) => {
   event.preventDefault();
