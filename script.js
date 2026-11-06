@@ -131,7 +131,7 @@ Object.assign(i18n.ar, {
   "designer.width": "العرض", "designer.length": "الطول", "designer.height": "الارتفاع", "designer.roof": "نوع السقف",
   "designer.roofHint": "اختر التصميم الأقرب لاحتياجك", "designer.louver": "شرائح متحركة", "designer.fabric": "قماش قابل للطي", "designer.fixed": "سقف ثابت",
   "designer.finish": "لون الهيكل", "designer.sand": "رملي", "designer.white": "أبيض", "designer.charcoal": "فحمي", "designer.sides": "إضافات جانبية",
-  "designer.sideOption": "إضافة زجاج جانبي", "designer.submit": "اطلب عرض سعر لهذا التصميم", "designer.disclaimer": "سنرسل اختياراتك وأبعادك إلى واتساب لتأكيد التفاصيل.",
+  "designer.sideOption": "إضافة زجاج جانبي", "designer.glassCloseAll": "إغلاق كل الأبواب", "designer.glassOpenAll": "فتح كل الأبواب", "designer.glassFront": "الجهة الأمامية", "designer.glassBack": "الجهة الخلفية", "designer.glassLeft": "الجهة اليسرى", "designer.glassRight": "الجهة اليمنى", "designer.submit": "اطلب عرض سعر لهذا التصميم", "designer.disclaimer": "سنرسل اختياراتك وأبعادك إلى واتساب لتأكيد التفاصيل.",
   "designer.message": "مرحبًا، أود الاستفسار عن تصميم مظلة بهذه التفاصيل:", "designer.roof.louver": "شرائح متحركة", "designer.roof.fabric": "قماش قابل للطي", "designer.roof.fixed": "سقف ثابت",
   "designer.finish.sand": "رملي", "designer.finish.white": "أبيض", "designer.finish.charcoal": "فحمي", "designer.side.yes": "مع زجاج جانبي", "designer.side.no": "بدون زجاج جانبي"
 });
@@ -141,7 +141,7 @@ Object.assign(i18n.en, {
   "designer.previewNote": "Illustrative only; final details are confirmed after a site visit", "designer.dimensions": "Pergola dimensions", "designer.dimensionsHint": "Enter measurements in metres",
   "designer.width": "Width", "designer.length": "Length", "designer.height": "Height", "designer.roof": "Roof type", "designer.roofHint": "Choose a style to get started",
   "designer.louver": "Adjustable louvres", "designer.fabric": "Retractable fabric", "designer.fixed": "Fixed roof", "designer.finish": "Frame finish",
-  "designer.sand": "Sand", "designer.white": "White", "designer.charcoal": "Charcoal", "designer.sides": "Side options", "designer.sideOption": "Add glass side panels",
+  "designer.sand": "Sand", "designer.white": "White", "designer.charcoal": "Charcoal", "designer.sides": "Side options", "designer.sideOption": "Add glass side panels", "designer.glassCloseAll": "Close all doors", "designer.glassOpenAll": "Open all doors", "designer.glassFront": "Front doors", "designer.glassBack": "Back doors", "designer.glassLeft": "Left doors", "designer.glassRight": "Right doors",
   "designer.submit": "Request a quote for this design", "designer.disclaimer": "Your dimensions and choices will be sent to WhatsApp for confirmation.",
   "designer.message": "Hello, I’d like a quote for a pergola with these details:", "designer.roof.louver": "Adjustable louvres", "designer.roof.fabric": "Retractable fabric", "designer.roof.fixed": "Fixed roof",
   "designer.finish.sand": "Sand", "designer.finish.white": "White", "designer.finish.charcoal": "Charcoal", "designer.side.yes": "With glass sides", "designer.side.no": "Without glass sides"
@@ -152,7 +152,7 @@ Object.assign(i18n.tr, {
   "designer.previewNote": "Görsel temsilidir; son ölçüler keşif sonrası netleşir", "designer.dimensions": "Pergola ölçüleri", "designer.dimensionsHint": "Ölçüleri metre olarak girin",
   "designer.width": "Genişlik", "designer.length": "Uzunluk", "designer.height": "Yükseklik", "designer.roof": "Çatı tipi", "designer.roofHint": "İhtiyacınıza uygun tasarımı seçin",
   "designer.louver": "Hareketli lamel", "designer.fabric": "Açılır kumaş", "designer.fixed": "Sabit çatı", "designer.finish": "Gövde rengi",
-  "designer.sand": "Kum", "designer.white": "Beyaz", "designer.charcoal": "Antrasit", "designer.sides": "Yan seçenekler", "designer.sideOption": "Yan cam ekle",
+  "designer.sand": "Kum", "designer.white": "Beyaz", "designer.charcoal": "Antrasit", "designer.sides": "Yan seçenekler", "designer.sideOption": "Yan cam ekle", "designer.glassCloseAll": "Tum kapilari kapat", "designer.glassOpenAll": "Tum kapilari ac", "designer.glassFront": "On kapilar", "designer.glassBack": "Arka kapilar", "designer.glassLeft": "Sol kapilar", "designer.glassRight": "Sag kapilar",
   "designer.submit": "Bu tasarım için fiyat isteyin", "designer.disclaimer": "Ölçü ve seçimleriniz onay için WhatsApp’a gönderilir.",
   "designer.message": "Merhaba, şu özelliklerde bir pergola için fiyat almak istiyorum:", "designer.roof.louver": "Hareketli lamel", "designer.roof.fabric": "Açılır kumaş", "designer.roof.fixed": "Sabit çatı",
   "designer.finish.sand": "Kum", "designer.finish.white": "Beyaz", "designer.finish.charcoal": "Antrasit", "designer.side.yes": "Yan camlı", "designer.side.no": "Yan camsız"
@@ -182,7 +182,19 @@ Object.assign(i18n.tr, {
   "gallery.home.desc": "Evin yanındaki dış alan için kumaş çatılı ve gövdeye yerleştirilmiş çizgisel aydınlatmalı kullanışlı çözüm."
 });
 
+Object.assign(i18n.ar, { "designer.roofOpen": "نسبة فتح السقف", "designer.roofClose": "إغلاق السقف", "designer.roofOpenAll": "فتح السقف بالكامل" });
+Object.assign(i18n.en, { "designer.roofOpen": "Roof opening", "designer.roofClose": "Close roof", "designer.roofOpenAll": "Fully open roof" });
+Object.assign(i18n.tr, { "designer.roofOpen": "Çatı açıklığı", "designer.roofClose": "Çatıyı kapat", "designer.roofOpenAll": "Çatıyı tamamen aç" });
+
+const improvements = {
+  ar: { "nav.skip": "انتقل إلى المحتوى", "nav.menu": "القائمة", "contact.website": "الموقع:", "form.send": "متابعة عبر واتساب", "form.note": "يفتح واتساب برسالتك لمراجعتها وإرسالها.", "form.message": "مرحبًا، أود الاستفسار عن مشروع مظلات:", "designer.area": "المساحة التقريبية", "designer.reset": "إعادة الضبط", "products.p3.title": "مظلات بيوكليماتيك" },
+  en: { "nav.skip": "Skip to content", "nav.menu": "Menu", "contact.website": "Website:", "form.send": "Continue in WhatsApp", "form.note": "WhatsApp opens with your message ready to review and send.", "form.message": "Hello, I would like to discuss a shading project:", "designer.area": "Approximate area", "designer.reset": "Reset design" },
+  tr: { "nav.skip": "İçeriğe geç", "nav.menu": "Menü", "contact.website": "Web sitesi:", "form.send": "WhatsApp ile devam et", "form.note": "Mesajınızı kontrol edip göndermek için WhatsApp açılır.", "form.message": "Merhaba, bir gölgelendirme projesi hakkında bilgi almak istiyorum:", "designer.area": "Yaklaşık alan", "designer.reset": "Sıfırla" }
+};
+Object.entries(improvements).forEach(([lang, entries]) => Object.assign(i18n[lang], entries));
+
 function setLanguage(lang) {
+  lang = Object.hasOwn(i18n, lang) ? lang : "ar";
   const dict = i18n[lang] || i18n.ar;
   document.documentElement.lang = lang;
   document.documentElement.dir = dict.dir;
@@ -200,9 +212,10 @@ function setLanguage(lang) {
 
   document.querySelectorAll(".lang-switch button").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
+    btn.setAttribute("aria-pressed", String(btn.dataset.lang === lang));
   });
 
-  localStorage.setItem("feyaz_lang", lang);
+  try { localStorage.setItem("feyaz_lang", lang); } catch { /* Language switching also works without storage. */ }
   updatePergolaPreview();
 }
 
@@ -221,16 +234,96 @@ function updatePergolaPreview() {
   document.getElementById("lengthLabel").textContent = `${l.toFixed(1)} m`;
   document.getElementById("heightLabel").textContent = `${h.toFixed(1)} m`;
   document.getElementById("dimensionSummary").textContent = `${w.toFixed(1)} ${unit} × ${l.toFixed(1)} ${unit} × ${h.toFixed(1)} ${unit}`;
+  document.getElementById("areaSummary").textContent = `${new Intl.NumberFormat(lang, { maximumFractionDigits: 2 }).format(w * l)} ${unit}²`;
   document.querySelector(".pergola-structure").setAttribute("transform", `translate(345 230) scale(${(w / 4).toFixed(3)} ${(l / 4).toFixed(3)}) translate(-345 -230)`);
   const finish = document.querySelector('input[name="finish"]:checked').value;
   const colors = { sand: ["#ad956f", "#755b3d", "#624a30"], white: ["#f4f1e9", "#d0c9ba", "#aaa393"], charcoal: ["#626766", "#454a49", "#343837"] }[finish];
-  document.getElementById("roofTop").setAttribute("fill", colors[0]);
-  document.querySelectorAll(".beam").forEach((el) => { el.setAttribute("fill", colors[1]); el.setAttribute("stroke", colors[2]); });
+  document.getElementById("roofTop").setAttribute("fill", "#263238");
+  document.querySelectorAll(".beam").forEach((el) => { el.setAttribute("fill", "none"); el.setAttribute("stroke", colors[2]); });
   const roof = document.querySelector('input[name="roof"]:checked').value;
-  document.getElementById("roofSlats").style.display = roof === "louver" ? "" : "none";
-  document.getElementById("roofTop").setAttribute("fill-opacity", roof === "fabric" ? ".88" : "1");
-  const sidesOn = document.getElementById("sideOption").checked;
-  ["sideBack", "sideLeft"].forEach((id) => { document.getElementById(id).style.display = sidesOn ? "" : "none"; });
+  const roofOpenControl = document.getElementById("roofOpen");
+  const movableRoof = roof !== "fixed";
+  const roofOpen = movableRoof ? Number(roofOpenControl?.value || 0) / 100 : 0;
+  const roofMovement = document.getElementById("roofMovement");
+  if (roofMovement) roofMovement.classList.toggle("is-disabled", !movableRoof);
+  if (roofOpenControl) roofOpenControl.disabled = !movableRoof;
+  document.querySelectorAll("[data-roof-action]").forEach((button) => { button.disabled = !movableRoof; });
+  document.getElementById("roofOpenValue").textContent = `${Math.round(roofOpen * 100)}%`;
+  const roofSlats = document.getElementById("roofSlats");
+  roofSlats.style.display = movableRoof ? "" : "none";
+  const roofTop = document.getElementById("roofTop");
+  roofTop.setAttribute("stroke", colors[2]);
+  const roofCover = document.getElementById("roofCover");
+  // Fabric remains gathered at the fixed edge when fully retracted.
+  const coverFraction = roof === "fabric" ? 1 - roofOpen * .9 : 1 - roofOpen;
+  roofCover.setAttribute("fill", roof === "fabric" ? "url(#roofTone)" : "#eee5d1");
+  roofSlats.setAttribute("stroke-width", roof === "fabric" ? "2" : "4");
+  const leftFar = [170, 130], rightFar = [400, 75], leftNear = [285, 195], rightNear = [520, 135];
+  const lerp = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+  const movingFarEdge = lerp(leftFar, rightFar, coverFraction);
+  const movingNearEdge = lerp(leftNear, rightNear, coverFraction);
+  const coverPoints = [leftFar, movingFarEdge, movingNearEdge, leftNear].map((point) => point.map((n) => n.toFixed(1)).join(",")).join(" ");
+  roofTop.setAttribute("points", coverPoints);
+  roofCover.setAttribute("points", coverPoints);
+  document.getElementById("roofClipShape").setAttribute("points", coverPoints);
+  const slatPaths = Array.from({ length: 8 }, (_, index) => {
+    const across = (index + 0.5) / 8;
+    const far = lerp(leftFar, movingFarEdge, across);
+    const near = lerp(leftNear, movingNearEdge, across);
+    if (roof === "fabric") {
+      const middle = lerp(far, near, .5);
+      // Curved seams suggest soft fabric folds instead of rigid louvres.
+      return `M${far[0].toFixed(1)} ${far[1].toFixed(1)} Q${middle[0].toFixed(1)} ${(middle[1] + 4 + roofOpen * 8).toFixed(1)} ${near[0].toFixed(1)} ${near[1].toFixed(1)}`;
+    }
+    return `M${far[0].toFixed(1)} ${far[1].toFixed(1)} L${near[0].toFixed(1)} ${near[1].toFixed(1)}`;
+  }).join(" ");
+  document.getElementById("roofSlats").setAttribute("d", slatPaths);
+  const sideOption = document.getElementById("sideOption");
+  const sidesOn = sideOption.checked;
+  const glassControls = document.getElementById("glassControls");
+  if (glassControls) glassControls.hidden = !sidesOn;
+
+  const frontOpen = sidesOn ? Number(document.getElementById("glassOpenFront")?.value || 0) / 100 : 0;
+  const backOpen = sidesOn ? Number(document.getElementById("glassOpenBack")?.value || 0) / 100 : 0;
+  const leftOpen = sidesOn ? Number(document.getElementById("glassOpenLeft")?.value || 0) / 100 : 0;
+  const rightOpen = sidesOn ? Number(document.getElementById("glassOpenRight")?.value || 0) / 100 : 0;
+
+  const setPct = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = `${Math.round(value * 100)}%`;
+  };
+  setPct("glassOpenFrontValue", frontOpen);
+  setPct("glassOpenBackValue", backOpen);
+  setPct("glassOpenLeftValue", leftOpen);
+  setPct("glassOpenRightValue", rightOpen);
+
+  const avgOpen = (frontOpen + backOpen + leftOpen + rightOpen) / 4;
+
+  const sideBack = document.getElementById("sideBack");
+  const sideLeft = document.getElementById("sideLeft");
+  const frontBackOpen = frontOpen;
+  const leftRightOpen = leftOpen;
+  const farLeft = document.getElementById("sideFarLeft");
+  const farRight = document.getElementById("sideFarRight");
+  if (farLeft) {
+    farLeft.style.display = sidesOn ? "" : "none";
+    farLeft.style.opacity = `${Math.max(0.25, 1 - backOpen * .68)}`;
+  }
+  if (farRight) {
+    farRight.style.display = sidesOn ? "" : "none";
+    farRight.style.opacity = `${Math.max(0.25, 1 - rightOpen * .68)}`;
+  }
+  if (sideBack) {
+    sideBack.style.display = sidesOn ? "" : "none";
+    sideBack.style.opacity = `${Math.max(0.25, 1 - frontBackOpen * 0.68)}`;
+    sideBack.style.transform = `translate(${(frontBackOpen * 12).toFixed(1)}px, ${(frontBackOpen * 8).toFixed(1)}px)`;
+  }
+  if (sideLeft) {
+    sideLeft.style.display = sidesOn ? "" : "none";
+    sideLeft.style.opacity = `${Math.max(0.25, 1 - leftRightOpen * 0.68)}`;
+    sideLeft.style.transform = `translate(${-leftRightOpen * 8}px, ${leftRightOpen * 8}px)`;
+  }
+  if (roofTop) roofTop.style.opacity = `${Math.max(0.88, 1 - avgOpen * 0.12)}`;
   document.querySelectorAll(".choice-card").forEach((card) => card.classList.toggle("selected", card.querySelector("input").checked));
 }
 
@@ -242,11 +335,76 @@ document.getElementById("designerForm").addEventListener("submit", (event) => {
   const roof = document.querySelector('input[name="roof"]:checked').value;
   const finish = document.querySelector('input[name="finish"]:checked').value;
   const [width, length, height] = designerFields.map((id) => document.getElementById(id).value);
-  const message = `${dict["designer.message"]}\n${dict["designer.width"]}: ${width} m\n${dict["designer.length"]}: ${length} m\n${dict["designer.height"]}: ${height} m\n${dict[`designer.roof.${roof}`]}\n${dict[`designer.finish.${finish}`]}\n${document.getElementById("sideOption").checked ? dict["designer.side.yes"] : dict["designer.side.no"]}`;
+  const front = document.getElementById("glassOpenFront")?.value || "0";
+  const back = document.getElementById("glassOpenBack")?.value || "0";
+  const left = document.getElementById("glassOpenLeft")?.value || "0";
+  const right = document.getElementById("glassOpenRight")?.value || "0";
+  const roofOpening = roof !== "fixed" ? document.getElementById("roofOpen")?.value || "0" : "0";
+  const glassDetails = document.getElementById("sideOption").checked ? `\n${dict["designer.glassFront"]}: ${front}%\n${dict["designer.glassBack"]}: ${back}%\n${dict["designer.glassLeft"]}: ${left}%\n${dict["designer.glassRight"]}: ${right}%` : "";
+  const message = `${dict["designer.message"]}\n${dict["designer.width"]}: ${width} m\n${dict["designer.length"]}: ${length} m\n${dict["designer.height"]}: ${height} m\n${dict["designer.area"]}: ${Number(width) * Number(length)} m²\n${dict[`designer.roof.${roof}`]}\n${dict["designer.roofOpen"]}: ${roofOpening}%\n${dict[`designer.finish.${finish}`]}\n${document.getElementById("sideOption").checked ? dict["designer.side.yes"] : dict["designer.side.no"]}${glassDetails}`;
   window.open(`https://wa.me/905550181553?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
 });
 
-const saved = localStorage.getItem("feyaz_lang") || "ar";
+document.querySelectorAll("[data-roof-action]").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.getElementById("roofOpen").value = button.dataset.roofAction === "open" ? "100" : "0";
+    updatePergolaPreview();
+  });
+});
+
+document.querySelectorAll("[data-glass-action]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.getAttribute("data-glass-action") === "open" ? "100" : "0";
+    ["glassOpenFront", "glassOpenBack", "glassOpenLeft", "glassOpenRight"].forEach((id) => {
+      const range = document.getElementById(id);
+      if (range) range.value = target;
+    });
+    updatePergolaPreview();
+  });
+});
+
+["glassOpenFront", "glassOpenBack", "glassOpenLeft", "glassOpenRight"].forEach((id) => {
+  const range = document.getElementById(id);
+  if (range) range.addEventListener("input", updatePergolaPreview);
+});
+
+document.getElementById("designerForm").addEventListener("reset", () => {
+  requestAnimationFrame(updatePergolaPreview);
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+function closeMenu() {
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.getElementById("mainNav").classList.remove("is-open");
+}
+menuToggle.addEventListener("click", () => {
+  const open = menuToggle.getAttribute("aria-expanded") !== "true";
+  menuToggle.setAttribute("aria-expanded", String(open));
+  document.getElementById("mainNav").classList.toggle("is-open", open);
+});
+document.querySelectorAll(".main-nav a").forEach((link) => link.addEventListener("click", closeMenu));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    closeMenu();
+    menuToggle.focus();
+  }
+});
+
+document.getElementById("contactForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const dict = i18n[document.documentElement.lang];
+  const fields = new FormData(event.currentTarget);
+  const message = `${dict["form.message"]}\n${dict["form.name"]}: ${fields.get("name").trim()}\n${dict["form.phone"]}: ${fields.get("phone").trim()}\n${fields.get("message").trim()}`;
+  window.open(`https://wa.me/905550181553?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+});
+
+document.querySelectorAll(".card img, .about-grid img, .gallery-grid img").forEach((img) => {
+  img.loading = "lazy";
+  img.decoding = "async";
+});
+
+let saved = "ar";
+try { saved = localStorage.getItem("feyaz_lang") || "ar"; } catch { /* Use Arabic when storage is unavailable. */ }
 setLanguage(saved);
 
 document.querySelectorAll(".lang-switch button").forEach((btn) => {

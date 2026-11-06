@@ -7,16 +7,19 @@
   <meta name="description" content="Feyaz tente - حلول مظلات شمسية عصرية للمنازل والمقاهي والمشاريع التجارية." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Manrope:wght@400;600;700;800&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Manrope:wght@400;600;700;800&family=Montserrat:wght@500;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#home" data-i18n="nav.skip">انتقل إلى المحتوى</a>
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="#" class="brand">Feyaz <span>tente</span></a>
-      <nav class="main-nav" id="mainNav">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav" data-i18n="nav.menu">القائمة</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <a href="#home" data-i18n="nav.home">الرئيسية</a>
         <a href="#products" data-i18n="nav.products">المنتجات</a>
+        <a href="#designer" data-i18n="designer.cta">صمّم مظلتك</a>
         <a href="#about" data-i18n="nav.about">من نحن</a>
         <a href="#contact" data-i18n="nav.contact">تواصل</a>
       </nav>
@@ -46,7 +49,7 @@
     <section class="stats">
       <div class="container stats-grid">
         <div><strong>10,000+</strong><span data-i18n="stats.projects">مشروع منفذ</span></div>
-        <div><strong>8</strong><span data-i18n="stats.years">سنوات خبرة 10</span></div>
+        <div><strong>8</strong><span data-i18n="stats.years">سنوات خبرة</span></div>
         <div><strong>24/7</strong><span data-i18n="stats.support">خدمة ودعم</span></div>
       </div>
     </section>
@@ -87,9 +90,16 @@
             <div class="preview-topline"><span data-i18n="designer.preview">معاينة تقريبية</span><span class="preview-live"><i></i><span data-i18n="designer.live">مباشرة</span></span></div>
             <div class="pergola-stage">
               <svg id="pergolaPreview" viewBox="0 0 640 430" role="img" aria-label="Pergola preview">
-                <defs><linearGradient id="roofTone" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#d9c8a9"/><stop offset="1" stop-color="#a98c5e"/></linearGradient><linearGradient id="groundTone" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f5efe3"/><stop offset="1" stop-color="#e9dfce"/></linearGradient></defs>
+                <defs><linearGradient id="roofTone" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f4edda"/><stop offset="1" stop-color="#d8c9a7"/></linearGradient><linearGradient id="groundTone" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f5efe3"/><stop offset="1" stop-color="#e9dfce"/></linearGradient><clipPath id="roofCoverClip"><polygon id="roofClipShape" points="170,130 400,75 520,135 285,195"/></clipPath></defs>
                 <path d="M65 330 315 195 575 322 320 405Z" fill="url(#groundTone)"/>
-                <g class="pergola-structure"><polygon id="roofTop" points="170,130 400,75 520,135 285,195" fill="url(#roofTone)" stroke="#705631" stroke-width="5" stroke-linejoin="round"/><path id="roofSlats" d="M194 125 308 182 M220 118 334 176 M246 111 360 170 M272 105 386 163 M298 98 412 156 M324 92 438 150 M350 86 464 143 M376 80 490 137" fill="none" stroke="#785d37" stroke-width="4"/><path class="beam" d="m170 130 115 60v207l-15-7V195l-100-52z M400 75v196l-15 8V80z M520 135v189l-15 8V141z" fill="#755b3d" stroke="#624a30" stroke-width="3"/><path id="sideBack" d="M285 196 515 138v185l-230 82Z" fill="#d8e1dc" fill-opacity=".52" stroke="#8a9a90" stroke-width="2"/><path id="sideLeft" d="M170 132 285 192v201l-15-7V198l-100-53Z" fill="#d8e1dc" fill-opacity=".48" stroke="#8a9a90" stroke-width="2"/></g>
+                <g class="pergola-structure">
+                  <g id="sideFarLeft" class="glass-side"><path class="glass-pane" d="M170 132 400 77v193l-230 60Z"/><path class="glass-reflection" d="m192 137 62-15v177l-62 16z M286 115l62-15v178l-62 15z"/><path class="glass-frame" d="M170 132 400 77v193l-230 60Z M247 114v188 M324 96v194"/></g>
+                  <g id="sideFarRight" class="glass-side"><path class="glass-pane" d="M400 77 520 137v187l-120-54Z"/><path class="glass-reflection" d="m414 95 34 17v160l-34-15z M468 122l34 17v158l-34-15z"/><path class="glass-frame" d="M400 77 520 137v187l-120-54Z M440 97v165 M480 117v162"/></g>
+                  <g id="sideBack" class="glass-side"><path class="glass-pane" d="M285 196 515 138v185l-230 82Z"/><path class="glass-reflection" d="m305 207 66-17v167l-66 23z M390 185l37-9v168l-37 13z"/><path class="glass-frame" d="M285 196 515 138v185l-230 82Z M342 182v193 M400 167v188 M457 153v183"/></g>
+                  <g id="sideLeft" class="glass-side"><path class="glass-pane" d="M170 132 285 192v201l-15-7V198l-100-53Z"/><path class="glass-reflection" d="m183 150 31 17v180l-31-16z M230 175l35 18v174l-35-18z"/><path class="glass-frame" d="M170 132 285 192v201l-15-7V198l-100-53Z M209 152v184 M247 172v185"/></g>
+                  <polygon id="roofTop" points="170,130 400,75 520,135 285,195" fill="#344047" stroke="#202a2d" stroke-width="8" stroke-linejoin="round"/><polygon id="roofCover" points="170,130 400,75 520,135 285,195" fill="#eee5d1" stroke="#c7b994" stroke-width="2" stroke-linejoin="round"/><path id="roofSlats" clip-path="url(#roofCoverClip)" d="M170 130 285 195 M203 122 318 187 M236 114 351 179 M269 106 384 171 M301 98 416 163 M334 90 449 155 M367 82 482 147 M400 75 520 135" fill="none" stroke="#b7a882" stroke-width="4"/>
+                  <path class="beam" d="M170 130 400 75 520 135 285 195 170 130 M170 130v200 M400 75v195 M520 135v189 M285 195v198 M170 330l115 63 235-69-120-54" fill="none" stroke="#263238" stroke-width="8" stroke-linecap="square" stroke-linejoin="round"/>
+                </g>
                 <g class="dimension-labels"><path d="M160 365 281 425 M291 414 530 335 M548 125v185" stroke="#6f5127" stroke-width="2" stroke-dasharray="5 5"/><text id="widthLabel" x="196" y="408">4.0 m</text><text id="lengthLabel" x="435" y="392">4.0 m</text><text id="heightLabel" x="563" y="225">2.6 m</text></g>
               </svg>
             </div>
@@ -104,10 +114,38 @@
             </div>
             <div class="designer-step"><span class="step-number">02</span><div><h3 data-i18n="designer.roof">نوع السقف</h3><p data-i18n="designer.roofHint">اختر التصميم الأقرب لاحتياجك</p></div></div>
             <div class="choice-grid roof-choices"><label class="choice-card selected"><input type="radio" name="roof" value="louver" checked><span class="choice-icon">▥</span><span data-i18n="designer.louver">شرائح متحركة</span></label><label class="choice-card"><input type="radio" name="roof" value="fabric"><span class="choice-icon">⌁</span><span data-i18n="designer.fabric">قماش قابل للطي</span></label><label class="choice-card"><input type="radio" name="roof" value="fixed"><span class="choice-icon">▤</span><span data-i18n="designer.fixed">سقف ثابت</span></label></div>
-            <div class="designer-options-row">
-              <fieldset><legend data-i18n="designer.finish">لون الهيكل</legend><div class="swatches"><label><input type="radio" name="finish" value="sand" checked><i class="swatch sand"></i><span data-i18n="designer.sand">رملي</span></label><label><input type="radio" name="finish" value="white"><i class="swatch white"></i><span data-i18n="designer.white">أبيض</span></label><label><input type="radio" name="finish" value="charcoal"><i class="swatch charcoal"></i><span data-i18n="designer.charcoal">فحمي</span></label></div></fieldset>
-              <fieldset><legend data-i18n="designer.sides">إضافات جانبية</legend><label class="toggle-option"><input type="checkbox" id="sideOption"><span data-i18n="designer.sideOption">إضافة زجاج جانبي</span></label></fieldset>
+            <div class="roof-movement" id="roofMovement">
+              <label class="glass-slider-wrap" for="roofOpen"><span data-i18n="designer.roofOpen">فتح السقف المتحرك</span><strong id="roofOpenValue">0%</strong></label>
+              <input id="roofOpen" type="range" min="0" max="100" step="1" value="0" />
+              <div class="glass-quick-actions">
+                <button type="button" class="glass-btn" data-roof-action="close" data-i18n="designer.roofClose">إغلاق السقف</button>
+                <button type="button" class="glass-btn" data-roof-action="open" data-i18n="designer.roofOpenAll">فتح السقف بالكامل</button>
+              </div>
             </div>
+            <div class="designer-options-row">
+              <fieldset><legend data-i18n="designer.finish">لون الهيكل</legend><div class="swatches"><label><input type="radio" name="finish" value="sand"><i class="swatch sand"></i><span data-i18n="designer.sand">رملي</span></label><label><input type="radio" name="finish" value="white"><i class="swatch white"></i><span data-i18n="designer.white">أبيض</span></label><label><input type="radio" name="finish" value="charcoal" checked><i class="swatch charcoal"></i><span data-i18n="designer.charcoal">فحمي</span></label></div></fieldset>
+              <fieldset>
+                <legend data-i18n="designer.sides">إضافات جانبية</legend>
+                <label class="toggle-option"><input type="checkbox" id="sideOption" checked><span data-i18n="designer.sideOption">إضافة زجاج جانبي</span></label>
+                <div class="glass-controls" id="glassControls" hidden>
+                  <div class="glass-quick-actions">
+                    <button type="button" class="glass-btn" data-glass-action="close" data-i18n="designer.glassCloseAll">إغلاق كل الأبواب</button>
+                    <button type="button" class="glass-btn" data-glass-action="open" data-i18n="designer.glassOpenAll">فتح كل الأبواب</button>
+                  </div>
+                  <div class="glass-sliders">
+                    <label class="glass-slider-wrap" for="glassOpenFront"><span data-i18n="designer.glassFront">الجهة الأمامية</span><strong id="glassOpenFrontValue">0%</strong></label>
+                    <input id="glassOpenFront" type="range" min="0" max="100" step="1" value="0" aria-label="Front doors openness" />
+                    <label class="glass-slider-wrap" for="glassOpenBack"><span data-i18n="designer.glassBack">الجهة الخلفية</span><strong id="glassOpenBackValue">0%</strong></label>
+                    <input id="glassOpenBack" type="range" min="0" max="100" step="1" value="0" aria-label="Back doors openness" />
+                    <label class="glass-slider-wrap" for="glassOpenLeft"><span data-i18n="designer.glassLeft">الجهة اليسرى</span><strong id="glassOpenLeftValue">0%</strong></label>
+                    <input id="glassOpenLeft" type="range" min="0" max="100" step="1" value="0" aria-label="Left doors openness" />
+                    <label class="glass-slider-wrap" for="glassOpenRight"><span data-i18n="designer.glassRight">الجهة اليمنى</span><strong id="glassOpenRightValue">0%</strong></label>
+                    <input id="glassOpenRight" type="range" min="0" max="100" step="1" value="0" aria-label="Right doors openness" />
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="designer-summary"><span><span data-i18n="designer.area">المساحة التقريبية</span> <strong id="areaSummary" dir="auto">16 م²</strong></span><button class="reset-design" type="reset" data-i18n="designer.reset">إعادة الضبط</button></div>
             <button class="btn btn-primary designer-submit" type="submit" data-i18n="designer.submit">اطلب عرض سعر لهذا التصميم</button>
             <p class="designer-footnote" data-i18n="designer.disclaimer">سنرسل اختياراتك وأبعادك إلى واتساب لتأكيد التفاصيل.</p>
           </form>
@@ -138,7 +176,6 @@
           <img src="photo_7_2026-10-30_08-33-08.jpg" alt="Project 1" />
           <img src="photo_8_2026-10-30_08-33-08.jpg" alt="Project 2" />
           <img src="photo_9_2026-10-30_08-33-08.jpg" alt="Project 3" />
-          <img src="photo_2026-10-30_08-30-09.jpg" alt="Project 4" />
           <figure class="gallery-item">
             <img src="photo_1_2026-10-30_08-33-08.jpg" alt="مطعم بتغطية سقف متحرك وإضاءة مدمجة" />
             <figcaption><h3 data-i18n="gallery.cafe.title">جلسة مطعم بسقف متحرك</h3><p data-i18n="gallery.cafe.desc">تغطية عصرية لمساحة مطعم خارجية، مع شرائح سقف وإضاءة مدمجة لراحة الزوار نهارًا ومساءً.</p></figcaption>
@@ -162,15 +199,19 @@
           <p data-i18n="contact.desc">احصل على استشارة مجانية وعرض سعر يناسب مشروعك.</p>
           <div class="contact-list">
             <p><strong data-i18n="contact.phone">الهاتف:</strong> <a class="phone-number" href="tel:+905550181553" dir="ltr">+90 555 018 1553</a></p>
-            <p><strong data-i18n="contact.email">البريد:</strong> feyaztente.com</p>
+            <p><strong data-i18n="contact.website">الموقع:</strong> <a class="website-link" href="https://feyaztente.com" dir="ltr">feyaztente.com</a></p>
             <p><strong data-i18n="contact.addr">العنوان:</strong> Istanbul, Turkey</p>
           </div>
         </div>
-        <form class="contact-form">
-          <input type="text" data-i18n-placeholder="form.name" placeholder="الاسم" />
-          <input type="tel" data-i18n-placeholder="form.phone" placeholder="رقم الهاتف" />
-          <textarea rows="5" data-i18n-placeholder="form.msg" placeholder="اكتب تفاصيل طلبك"></textarea>
-          <button type="button" class="btn btn-primary" data-i18n="form.send">إرسال الطلب</button>
+        <form class="contact-form" id="contactForm">
+          <label for="contactName" data-i18n="form.name">الاسم</label>
+          <input id="contactName" name="name" type="text" autocomplete="name" required maxlength="100" data-i18n-placeholder="form.name" placeholder="الاسم" />
+          <label for="contactPhone" data-i18n="form.phone">رقم الهاتف</label>
+          <input id="contactPhone" name="phone" type="tel" autocomplete="tel" dir="ltr" required minlength="7" maxlength="30" pattern="[+0-9٠-٩۰-۹\(\) .\-]{7,30}" data-i18n-placeholder="form.phone" placeholder="رقم الهاتف" />
+          <label for="contactMessage" data-i18n="form.msg">اكتب تفاصيل طلبك</label>
+          <textarea id="contactMessage" name="message" rows="5" required maxlength="2000" data-i18n-placeholder="form.msg" placeholder="اكتب تفاصيل طلبك"></textarea>
+          <button type="submit" class="btn btn-primary" data-i18n="form.send">إرسال الطلب</button>
+          <p class="form-note" data-i18n="form.note">يفتح واتساب برسالتك لمراجعتها وإرسالها.</p>
         </form>
       </div>
     </section>
