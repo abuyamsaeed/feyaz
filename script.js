@@ -334,9 +334,7 @@ function updatePergolaPreview() {
 
 document.querySelectorAll("#designerForm input").forEach((field) => field.addEventListener("input", updatePergolaPreview));
 document.querySelectorAll("#designerForm input[type=radio], #designerForm input[type=checkbox]").forEach((field) => field.addEventListener("change", updatePergolaPreview));
-document.getElementById("designerForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!event.currentTarget.reportValidity()) return;
+function getDesignWhatsAppUrl() {
   const dict = i18n[document.documentElement.lang] || i18n.ar;
   const roof = document.querySelector('input[name="roof"]:checked').value;
   const finish = document.querySelector('input[name="finish"]:checked').value;
@@ -348,7 +346,22 @@ document.getElementById("designerForm").addEventListener("submit", (event) => {
   const roofOpening = roof !== "fixed" ? document.getElementById("roofOpen")?.value || "0" : "0";
   const glassDetails = document.getElementById("sideOption").checked ? `\n${dict["designer.glassFront"]}: ${front}%\n${dict["designer.glassBack"]}: ${back}%\n${dict["designer.glassLeft"]}: ${left}%\n${dict["designer.glassRight"]}: ${right}%` : "";
   const message = `${dict["designer.message"]}\n${dict["designer.width"]}: ${width} m\n${dict["designer.length"]}: ${length} m\n${dict["designer.height"]}: ${height} m\n${dict["designer.area"]}: ${Number(width) * Number(length)} m²\n${dict[`designer.roof.${roof}`]}\n${dict["designer.roofOpen"]}: ${roofOpening}%\n${dict[`designer.finish.${finish}`]}\n${document.getElementById("sideOption").checked ? dict["designer.side.yes"] : dict["designer.side.no"]}${glassDetails}`;
-  window.open(`https://wa.me/905550181553?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  return `https://wa.me/905550181553?text=${encodeURIComponent(message)}`;
+}
+
+document.getElementById("designerForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!event.currentTarget.reportValidity()) return;
+  window.open(getDesignWhatsAppUrl(), "_blank", "noopener,noreferrer");
+});
+
+document.querySelector(".whatsapp-float").addEventListener("click", (event) => {
+  const form = document.getElementById("designerForm");
+  if (!form.reportValidity()) {
+    event.preventDefault();
+    return;
+  }
+  event.currentTarget.href = getDesignWhatsAppUrl();
 });
 
 document.querySelectorAll("[data-roof-action]").forEach((button) => {
